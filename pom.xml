@@ -3,7 +3,7 @@
 	<groupId>com.platform</groupId>
 	<artifactId>platform.field.mapping</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mapping</name>
+	<name>pass-field-mapping</name>
 	<description>mapping</description>
 	<properties>
 		<nexusUrl>http://127.0.0.1:18081/repository</nexusUrl>
@@ -53,6 +53,11 @@
 	</dependencyManagement>
 	<dependencies>
 		<dependency>
+			<groupId>com.platform</groupId>
+			<artifactId>platform.mybatis.plugin.common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -61,7 +66,6 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>2.6.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
@@ -103,7 +107,7 @@
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			 <version>1.2.4</version>
+			<version>1.2.4</version>
 		</dependency>
 
 		<!-- alibaba的druid数据库连接池 -->
@@ -154,6 +158,22 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.dfz</groupId>
+						<artifactId>Mybatis-Chapter9-GeneratorPlugin</artifactId>
+						<version>1.0-SNAPSHOT</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
