@@ -1,0 +1,25 @@
+server:
+  port: 12010
+  context-path: /field
+  compression:
+    enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: field.mapping
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/platform.pass.field
+    username: root
+    password: 23990308
+    driverClassName: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: com.platform.field.mapping.entity
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  config-location: classpath:mybatis-config.xml
+logging:
+  level:
+    com.netflix: warn
+    org.springframework.cloud: warn
+    com.platform: debug
