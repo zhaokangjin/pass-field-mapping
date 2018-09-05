@@ -10,7 +10,7 @@ spring:
     name: field.mapping
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/platform.pass.field
+    url: jdbc:mysql://localhost:3306/plafrorm.pass.field
     username: root
     password: 23990308
     driverClassName: com.mysql.jdbc.Driver

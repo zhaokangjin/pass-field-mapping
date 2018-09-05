@@ -30,7 +30,7 @@
 
 		<table tableName="field_commonts" domainObjectName="FieldCommonts" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
 		</table>
-		<table tableName="basedata_i18n" domainObjectName="BasedataI18n" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table>
+		<!-- <table tableName="basedata_i18n" domainObjectName="BasedataI18n" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table> -->
 
 	</context>
 </generatorConfiguration>

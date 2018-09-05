@@ -30,5 +30,5 @@ public interface FieldCommontsMapper {
 
     int batchUpdateByPrimaryKeySelective(@Param("list") List<FieldCommonts> list, @Param("example") FieldCommontsExample example);
 
-    List<FieldCommonts> selectFieldByList(@Param("fieldName") String fieldName, @Param("list") List<String> paramList);
+    List<FieldCommonts> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<String> paramList);
 }

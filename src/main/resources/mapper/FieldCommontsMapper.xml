@@ -374,9 +374,9 @@
      from field_commonts t 
     	where 1=1 
     		<if test="fieldName != null">
-    			and t.#{fieldName} in 
+    			and t.${fieldName} in 
     				<foreach collection="paramList" item="item" open="(" close=")" separator=",">
-    					item
+    					#{item,jdbcType=VARCHAR}
     				</foreach>
     		</if>
   </select>
