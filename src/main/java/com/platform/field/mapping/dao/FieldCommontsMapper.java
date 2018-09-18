@@ -28,7 +28,9 @@ public interface FieldCommontsMapper {
 
     int updateByPrimaryKey(FieldCommonts record);
 
+    //请注意：该方法并没有做全表更新的危险性预防判断，实际使用中请加入判断规避全表更新！
     int batchUpdateByPrimaryKeySelective(@Param("list") List<FieldCommonts> list, @Param("example") FieldCommontsExample example);
 
+    //请注意：此方法的List条件是String 类型，有可能有其他类型的，请自行扩展重载！
     List<FieldCommonts> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<String> paramList);
 }

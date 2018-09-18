@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.platform.field.mapping.entity.BasedataI18n;
 import com.platform.field.mapping.entity.FieldCommonts;
 
 import io.swagger.annotations.Api;
@@ -18,4 +19,6 @@ public interface FieldMapingController {
 	
 	@PostMapping(value = "listQuery")
 	public List<FieldCommonts> fieldCommontsMapper();
+	@PostMapping(value = "selectSepretor")
+	List<BasedataI18n> selectSepretor();
 }

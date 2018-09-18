@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 数据库驱动包位置 -->
+	<classPathEntry location="E:\ojdbc6-11.2.0.4.jar" />
+	<context id="context1">
+		<property name="javaFileEncoding" value="UTF-8" />
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="com.platform.mybatis.plugin.common.base.PlatformMapperPlugin" />
+
+		<commentGenerator type="com.platform.mybatis.plugin.common.base.PlatformCommentGenerator">
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+		<!-- 数据库链接URL、用户名、密码 -->
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@192.168.1.23:1521:orcl" userId="system" password="23990308" />
+
+		<!-- 生成模型的包名和位置 -->
+		<javaModelGenerator targetPackage="com.platform.field.mapping.entity" targetProject="pass-field-mapping/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+			<property name="rootClass" value="com.platform.mybatis.plugin.common.base.BaseEntity" />
+		</javaModelGenerator>
+		<!-- 生成的映射文件报名和位置 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject="pass-field-mapping/src/main/resources" />
+		<!-- 生成DAO的包名和位置 -->
+		<javaClientGenerator targetPackage="com.platform.field.mapping.dao" targetProject="pass-field-mapping/src/main/java" type="XMLMAPPER" />
+		<!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->
+
+		<table tableName="PLATFORM_FIELDS" domainObjectName="PlatformFields" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true">
+		</table>
+		<!-- <table tableName="basedata_i18n" domainObjectName="BasedataI18n" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table> -->
+
+	</context>
+</generatorConfiguration>

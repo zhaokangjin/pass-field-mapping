@@ -23,4 +23,5 @@ public interface BasedataI18nMapper {
     int batchUpdateByPrimaryKeySelective(@Param("list") List<BasedataI18n> list, @Param("example") BasedataI18nExample example);
 
     List<BasedataI18n> selectFieldByList(@Param("fieldName") String fieldName, @Param("list") List<String> paramList);
+    List<BasedataI18n> selectSepretor();
 }

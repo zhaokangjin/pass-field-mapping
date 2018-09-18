@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.platform.field.mapping.entity.BasedataI18n;
 import com.platform.field.mapping.entity.FieldCommonts;
 import com.platform.field.mapping.provider.api.FieldMapingController;
 import com.platform.field.mapping.service.FieldCommontsService;
@@ -18,11 +19,17 @@ public class FieldMapingControllorImpl implements FieldMapingController {
 
 	@Autowired
 	FieldCommontsService fieldCommontsService;
+
 	
 	@ApiOperation(value="字段显示接口")
 	@Override
 	public List<FieldCommonts> fieldCommontsMapper(){
 		logger.info("FieldMapingProviderImpl");
 		return fieldCommontsService.selectFieldByList();
+	}
+	@Override
+	public List<BasedataI18n> selectSepretor(){
+		logger.info("FieldMapingProviderImpl");
+		return fieldCommontsService.selectSepretor();
 	}
 }
