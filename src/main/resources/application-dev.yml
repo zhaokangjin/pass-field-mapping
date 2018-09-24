@@ -5,15 +5,36 @@ server:
     enabled: true
   tomcat:
     uri-encoding: UTF-8
+#jdbc.datasources=ds,ds1
+#jdbc.ds.driverClassName=com.mysql.jdbc.Driver
+#jdbc.ds.url=jdbc\:mysql\://localhost\:3306/ryx?characterEncoding\=UTF-8
+#jdbc.ds.username=root
+#jdbc.ds.password=123456
+#jdbc.ds1.driverClassName=com.mysql.jdbc.Driver
+#jdbc.ds1.url=jdbc\:mysql\://172.20.1.121\:3306/ryx?characterEncoding\=UTF-8
+#jdbc.ds1.username=root
+#jdbc.ds1.password=root
+#druid.username=root
+#druid.password=Ruyixing2017  spring.datasource
+#SpringMVC.java  
+  
 spring:
   application:
-    name: field.mapping
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/plafrorm.pass.field
-    username: root
-    password: 23990308
-    driverClassName: com.mysql.jdbc.Driver
+    name: chinese.english.mapping
+  datasource: 
+    dataAlias: ds,ds1
+    ds:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/platform_hm?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false
+      username: root
+      password: "23990308"
+      driverClassName: com.mysql.cj.jdbc.Driver
+    ds1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/plafrorm.pass.field?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false
+      username: root
+      password: "23990308"
+      driverClassName: com.mysql.cj.jdbc.Driver
 mybatis:
   type-aliases-package: com.platform.field.mapping.entity
   mapper-locations: classpath*:mapper/*Mapper.xml

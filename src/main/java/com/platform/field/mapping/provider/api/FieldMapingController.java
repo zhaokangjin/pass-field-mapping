@@ -2,6 +2,7 @@ package com.platform.field.mapping.provider.api;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,5 +21,7 @@ public interface FieldMapingController {
 	@PostMapping(value = "listQuery")
 	public List<FieldCommonts> fieldCommontsMapper();
 	@PostMapping(value = "selectSepretor")
-	List<BasedataI18n> selectSepretor();
+	public List<BasedataI18n> selectSepretor();
+	@GetMapping(value = "fieldMapping")
+	public List<FieldCommonts> fieldMapping();
 }

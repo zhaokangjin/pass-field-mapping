@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.platform.field.mapping.dao.FieldCommontsMapper">
+<mapper namespace="com.platform.field.mapping.dao.hypotaxis.FieldCommontsMapper">
   <resultMap id="BaseResultMap" type="com.platform.field.mapping.entity.FieldCommonts">
     <!--
       WARNING - @mbg.generated
@@ -372,14 +372,17 @@
      select 
     <include refid="Base_Column_List"/>
      from field_commonts t 
-    	where 1=1 AND  MOD(1,999)> 0  
-    	<if test="fieldName != null">
+    	where 1=1 
+    	<!-- <if test="fieldName != null">
     		and t.${fieldName} in 
     			<foreach collection="paramList" index="index" item="item" open="(" close=")" separator=",">
-    				<if test="index &lt; paramList.size">
+    				<if test"mod(index,999) != 0 and index < paramList.size">
+    					#{item,jdbcType=VARCHAR}
+    				</if>
+    				<if test"mod(index,999) == 0 and index < paramList.size">
     					#{item,jdbcType=VARCHAR}
     				</if>
     			</foreach>
-    	</if>
+    	</if> -->
   </select>
 </mapper>

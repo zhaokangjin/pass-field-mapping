@@ -32,4 +32,9 @@ public class FieldMapingControllorImpl implements FieldMapingController {
 		logger.info("FieldMapingProviderImpl");
 		return fieldCommontsService.selectSepretor();
 	}
+	@Override
+	public List<FieldCommonts> fieldMapping(){
+		logger.info("FieldMapingProviderImpl");
+		return fieldCommontsService.fieldMappingMapper();
+	}
 }

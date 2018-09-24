@@ -67,6 +67,13 @@ public class FieldMapingControllerTest {
 		}
 		System.err.println("selectSepretor:" + JSON.toJSON(newList));
 	}
+	
+	@Test
+	public void testFieldMapping() {
+		List<FieldCommonts> list = fieldMapingController.fieldMapping();
+		
+		System.err.println("selectSepretor:" + JSON.toJSON(list));
+	}
 	public static void main(String[] args) {
 		String en="Beijing General Engineering Design & Research Institute ";
 		String newEn = (en.replaceAll("[^a-zA-Z ]", "")).replaceAll("[ ]+", " ");

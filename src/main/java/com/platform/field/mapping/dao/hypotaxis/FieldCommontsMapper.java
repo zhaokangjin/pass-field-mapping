@@ -1,4 +1,4 @@
-package com.platform.field.mapping.dao;
+package com.platform.field.mapping.dao.hypotaxis;
 
 import com.platform.field.mapping.entity.FieldCommonts;
 import com.platform.field.mapping.entity.FieldCommontsExample;
