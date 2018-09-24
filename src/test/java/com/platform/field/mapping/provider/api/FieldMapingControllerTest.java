@@ -29,14 +29,6 @@ public class FieldMapingControllerTest {
 	@Test
 	public void testSelectSepretor() {
 		List<BasedataI18n> list = fieldMapingController.selectSepretor();
-/*		List<BasedataI18n> lists =new ArrayList<BasedataI18n>();
-		
-		for(int i=0;i<list.size();i++) {
-			list.get(i).setCn(list.get(i).getCn().replaceAll("[0-9 -]", ""));
-		}
-		System.err.println("selectSepretor:" + JSON.toJSON(list));*/
-		
-		
 		List<String> newList = new ArrayList<String>();
 		for (int i = 0; i < list.size(); i++) {
 			// 放线,_THROW_LINErin
