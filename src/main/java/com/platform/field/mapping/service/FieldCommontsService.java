@@ -61,7 +61,9 @@ public class FieldCommontsService {
 			if (longArr.length > 3 && longName.length() >= 30) {
 				StringBuilder sb = new StringBuilder();
 				for (int j = 0; j < 3; j++) {
-					sb.append("_").append(longArr[j]);
+					if(!longArr[j].equals("")) {
+						sb.append("_").append(longArr[j]);
+					}
 				}
 				shortName = sb.toString();
 			} else {
