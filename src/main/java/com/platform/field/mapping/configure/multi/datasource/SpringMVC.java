@@ -19,10 +19,10 @@ import com.alibaba.druid.support.http.WebStatFilter;
 @Configuration
 public class SpringMVC extends WebMvcConfigurerAdapter {
 
-	@Value("${spring.datasource.ds.username}")
+	@Value("${spring.datasource."+DataSourceType.MASTER+".username}")
 	private String druidUsername;
 
-	@Value("${spring.datasource.ds.password}")
+	@Value("${spring.datasource."+DataSourceType.MASTER+".password}")
 	private String druidPassword;
 
 	@Bean

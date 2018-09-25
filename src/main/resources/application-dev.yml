@@ -9,14 +9,14 @@ spring:
   application:
     name: chinese.english.mapping
   datasource: 
-    dataAlias: ds,ds1
-    ds:
+    dataAlias: master,hypotaxis
+    master:
       type: com.alibaba.druid.pool.DruidDataSource
       url: jdbc:mysql://localhost:3306/platform_hm?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false
       username: root
       password: "23990308"
       driverClassName: com.mysql.cj.jdbc.Driver
-    ds1:
+    hypotaxis:
       type: com.alibaba.druid.pool.DruidDataSource
       url: jdbc:mysql://localhost:3306/plafrorm.pass.field?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&verifyServerCertificate=false&useSSL=false&requireSSL=false
       username: root

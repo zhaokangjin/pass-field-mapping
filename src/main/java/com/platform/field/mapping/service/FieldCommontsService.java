@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.platform.field.mapping.configure.multi.datasource.DataSourceType;
 import com.platform.field.mapping.configure.multi.datasource.TargetDataSource;
 import com.platform.field.mapping.dao.hypotaxis.BasedataI18nMapper;
 import com.platform.field.mapping.dao.hypotaxis.FieldCommontsMapper;
@@ -27,7 +28,7 @@ public class FieldCommontsService {
 	@Autowired
 	FieldMappingMapper fieldMappingMapper;
 	
-	@TargetDataSource(value="ds1")
+	@TargetDataSource(value=DataSourceType.HYPOTAXIS)
 	public List<FieldCommonts> selectFieldByList() {
 		String fieldName = "field_code";
 		List<String> list = new ArrayList<String>();
@@ -35,12 +36,12 @@ public class FieldCommontsService {
 		List<FieldCommonts> result = fieldCommontsMapper.selectFieldByList(fieldName, list);
 		return result;
 	}
-	@TargetDataSource(value="ds1")
+	@TargetDataSource(value=DataSourceType.HYPOTAXIS)
 	public List<BasedataI18n> selectSepretor() {
 		List<BasedataI18n> result = basedataI18nMapper.selectSepretor();
 		return result;
 	}
-	@TargetDataSource(value="ds")
+	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldCommonts> fieldMappingMapper() {
 		List<TableMapping> resultTable = tableMappingMapper.selectAllSort();
 		List<FieldMapping> resultField = fieldMappingMapper.selectAllSort();

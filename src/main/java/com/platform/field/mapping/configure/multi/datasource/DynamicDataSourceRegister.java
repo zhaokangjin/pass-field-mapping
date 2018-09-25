@@ -44,7 +44,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
 			Map<String, Object> map = propertyResolver.getSubProperties(dsPrefix + ".");
 			DataSource ds = initDataSource(map);
 			// 设置默认数据源
-			if ("ds".equals(dsPrefix)) {
+			if ("master".equals(dsPrefix)) {
 				defaultDataSource = ds;
 			} else {
 				dynamicDataSources.put(dsPrefix, ds);
@@ -54,8 +54,8 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
 	}
 
 	/**
-	 * 初始化数据源
-	 * 
+	 * @Title: initDataSource
+	 * @Description: 配置连接池
 	 * @param map
 	 * @return
 	 */
@@ -101,16 +101,8 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
 			dataSource.setFilters("stat,wall,log4j");
 			dataSource.init();
 		} catch (SQLException e) {
-			throw new RuntimeException("druid datasource init fail");
+			throw new RuntimeException("druid runtime exception");
 		}
-		/*
-		 * String dsType = map.get("dsType").toString(); Class<DataSource>
-		 * dataSourceType; DataSource dataSource = null; try { dataSourceType =
-		 * (Class<DataSource>) Class.forName(dsType); dataSource =
-		 * DataSourceBuilder.create().driverClassName(driverClassName).url(url)
-		 * .username(username).password(password).type(dataSourceType).build();; } catch
-		 * (ClassNotFoundException e) { e.printStackTrace(); }
-		 */
 		return dataSource;
 	}
 
