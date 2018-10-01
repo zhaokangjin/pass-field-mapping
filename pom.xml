@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.platform</groupId>
 	<artifactId>platform.field.mapping</artifactId>
@@ -62,6 +64,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.platflat</groupId>
+			<artifactId>platflat.common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>com.platform</groupId>
 			<artifactId>platform.mybatis.plugin.common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -72,7 +79,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- <dependency> <groupId>aspectj</groupId> <artifactId>aspectjrt</artifactId> <version>1.5.3</version> </dependency> -->
+		<!-- <dependency> <groupId>aspectj</groupId> <artifactId>aspectjrt</artifactId> 
+			<version>1.5.3</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
@@ -162,6 +170,11 @@
 			<groupId>net.sourceforge.javacsv</groupId>
 			<artifactId>javacsv</artifactId>
 			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.platflat</groupId>
+			<artifactId>platflat.common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<profiles>
