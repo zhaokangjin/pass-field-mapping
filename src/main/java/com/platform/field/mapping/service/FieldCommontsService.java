@@ -27,7 +27,7 @@ public class FieldCommontsService {
 	TableMappingMapper tableMappingMapper;
 	@Autowired
 	FieldMappingMapper fieldMappingMapper;
-	
+
 	@TargetDataSource(value=DataSourceType.HYPOTAXIS)
 	public List<FieldCommonts> selectFieldByList() {
 		String fieldName = "field_code";
@@ -74,5 +74,12 @@ public class FieldCommontsService {
 			list.add(com);
 		}
 		return list;
+	}
+
+	@TargetDataSource(value=DataSourceType.MASTER)
+	public List<FieldMapping> getList(String fieldName,List<String> paramList) {
+		int splitSize=1000;
+		List<FieldMapping> resultField = fieldMappingMapper.selectFieldByList(fieldName, paramList,splitSize);
+		return resultField;
 	}
 }

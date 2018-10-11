@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.platform.field.mapping.entity.BasedataI18n;
 import com.platform.field.mapping.entity.FieldCommonts;
+import com.platform.field.mapping.entity.FieldMapping;
 
 import io.swagger.annotations.Api;
 
@@ -24,4 +25,6 @@ public interface FieldMapingController {
 	public List<BasedataI18n> selectSepretor();
 	@GetMapping(value = "fieldMapping")
 	public List<FieldCommonts> fieldMapping();
+	@GetMapping(value = "list")
+	public List<FieldMapping> getList(List<String> paramList) ;
 }

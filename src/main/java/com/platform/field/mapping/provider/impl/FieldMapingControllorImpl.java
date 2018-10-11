@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.platform.field.mapping.entity.BasedataI18n;
 import com.platform.field.mapping.entity.FieldCommonts;
+import com.platform.field.mapping.entity.FieldMapping;
+import com.platform.field.mapping.entity.FieldName;
 import com.platform.field.mapping.provider.api.FieldMapingController;
 import com.platform.field.mapping.service.FieldCommontsService;
 
@@ -36,5 +38,11 @@ public class FieldMapingControllorImpl implements FieldMapingController {
 	public List<FieldCommonts> fieldMapping(){
 		logger.info("FieldMapingProviderImpl");
 		return fieldCommontsService.fieldMappingMapper();
+	}
+	@Override
+	public List<FieldMapping> getList(List<String> paramList) {
+		
+		List<FieldMapping> list=fieldCommontsService.getList("FIELD_EN", paramList);
+		return list;
 	}
 }

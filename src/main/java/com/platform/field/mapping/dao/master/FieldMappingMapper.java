@@ -25,5 +25,5 @@ public interface FieldMappingMapper {
     int batchUpdateByPrimaryKeySelective(@Param("list") List<FieldMapping> list, @Param("example") FieldMappingExample example);
 
     //请注意：此方法的List条件是String 类型，有可能有其他类型的，请自行扩展重载！
-    List<FieldMapping> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<String> paramList);
+    List<FieldMapping> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<String> paramList, @Param("splitSize") int splitSize);
 }

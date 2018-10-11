@@ -8,7 +8,7 @@
 		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
  		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
 		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
-		<plugin type="com.platform.mybatis.plugin.common.base.PlatformMapperPlugin" />
+		<plugin type="com.platform.field.mapping.configure.multi.datasource.PlatformMapperPlugin" />
 
 		<commentGenerator type="com.platform.mybatis.plugin.common.base.PlatformCommentGenerator">
 			<property name="suppressDate" value="true" />
@@ -32,7 +32,7 @@
 		<!-- hypotaxis -->
 		<!-- <table tableName="basedata_i18n" domainObjectName="BasedataI18nTest" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table> -->
 		<table tableName="tpl_field_name" domainObjectName="FieldName" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table>
-		<table tableName="tpl_table_name" domainObjectName="TableName" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table>
+		<!-- <table tableName="tpl_table_name" domainObjectName="TableName" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"> </table> -->
 
 	</context>
 </generatorConfiguration>
