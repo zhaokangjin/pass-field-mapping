@@ -21,6 +21,7 @@ import com.platform.field.mapping.entity.TableMapping;
 
 @Service
 public class FieldCommontsService {
+	private final int splitSize=1000;
 	@Autowired
 	FieldCommontsMapper fieldCommontsMapper;
 	@Autowired
@@ -80,13 +81,10 @@ public class FieldCommontsService {
 
 	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldMapping> getList(String fieldName,List<String> paramList) {
-		int splitSize=1000;
 		FieldMappingExample example=null;
 		example=new FieldMappingExample();
 		Criteria criteria=example.createCriteria();
 		criteria.andFieldEnEqualTo("_FIRE_RISK_EXTENSION_CLAUSEFOR");
-		
-
 		List<FieldMapping> resultField = fieldMappingMapper.selectFieldByList(fieldName, paramList,splitSize,example);
 		return resultField;
 	}
