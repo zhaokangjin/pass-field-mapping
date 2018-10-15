@@ -15,6 +15,8 @@ import com.platform.field.mapping.dao.master.TableMappingMapper;
 import com.platform.field.mapping.entity.BasedataI18n;
 import com.platform.field.mapping.entity.FieldCommonts;
 import com.platform.field.mapping.entity.FieldMapping;
+import com.platform.field.mapping.entity.FieldMappingExample;
+import com.platform.field.mapping.entity.FieldMappingExample.Criteria;
 import com.platform.field.mapping.entity.TableMapping;
 
 @Service
@@ -79,7 +81,13 @@ public class FieldCommontsService {
 	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldMapping> getList(String fieldName,List<String> paramList) {
 		int splitSize=1000;
-		List<FieldMapping> resultField = fieldMappingMapper.selectFieldByList(fieldName, paramList,splitSize);
+		FieldMappingExample example=null;
+		example=new FieldMappingExample();
+		Criteria criteria=example.createCriteria();
+		criteria.andFieldEnEqualTo("_FIRE_RISK_EXTENSION_CLAUSEFOR");
+		
+
+		List<FieldMapping> resultField = fieldMappingMapper.selectFieldByList(fieldName, paramList,splitSize,example);
 		return resultField;
 	}
 }
