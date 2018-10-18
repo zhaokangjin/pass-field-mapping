@@ -106,8 +106,9 @@ public class FieldMapingControllerTest {
 	}
 	private List<String> getList(){
 		List<String> list=new ArrayList<String>();
-		list.add("_FIRE_RISK_EXTENSION_CLAUSEFOR");
-		list.add("_CHINA_AEROSPACE_SCIENCE_AND");
+//		list.add("_RESOLVE");
+//		list.add("_FIRE_RISK_EXTENSION_CLAUSEFOR");
+//		list.add("_CHINA_AEROSPACE_SCIENCE_AND");
 		list.add("_KNOW_HOW");
 		list.add("_ORDER_AND_ENDORSED_IN_BLANK");
 		list.add("_THEREFORE");
