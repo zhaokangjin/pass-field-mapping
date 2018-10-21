@@ -27,7 +27,7 @@ public class FieldMapingControllerTest {
 	@Autowired
 	FieldMapingController fieldMapingController;
 
-	@Test
+	/*@Test
 	public void writeCSV() {
 		// 定义一个CSV路径
 		String csvFilePath = "C://DatabaseDesign_ChineseAndEnglishDictionaries.csv";
@@ -50,7 +50,7 @@ public class FieldMapingControllerTest {
 				csvWriter.close();
 			}
 		}
-	}
+	}*/
 
 	@Test
 	public void test() {
@@ -92,12 +92,12 @@ public class FieldMapingControllerTest {
 		System.err.println("selectSepretor:" + JSON.toJSON(newList));
 	}
 
-	@Test
+/*	@Test
 	public void testFieldMapping() {
 		List<FieldCommonts> list = fieldMapingController.fieldMapping();
 
 		System.err.println("selectSepretor:" + JSON.toJSON(list));
-	}
+	}*/
 	
 	@Test
 	public void testAS() {

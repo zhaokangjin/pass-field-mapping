@@ -1,8 +1,9 @@
 package com.platform.field.mapping.entity;
 
-import com.platform.mybatis.plugin.common.base.BaseEntity;
 import java.io.Serializable;
 import java.util.Date;
+
+import com.platform.configure.base.BaseEntity;
 
 public class FieldCommonts extends BaseEntity implements Serializable {
     // field_commonts.field_id

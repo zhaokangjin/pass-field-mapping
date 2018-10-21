@@ -23,8 +23,8 @@ public interface FieldMapingController {
 	public List<FieldCommonts> fieldCommontsMapper();
 	@PostMapping(value = "selectSepretor")
 	public List<BasedataI18n> selectSepretor();
-	@GetMapping(value = "fieldMapping")
-	public List<FieldCommonts> fieldMapping();
+/*	@GetMapping(value = "fieldMapping")
+	public List<FieldCommonts> fieldMapping();*/
 	@GetMapping(value = "list")
 	public List<FieldMapping> getList(List<String> paramList) ;
 }

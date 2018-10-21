@@ -1,7 +1,8 @@
 package com.platform.field.mapping.entity;
 
-import com.platform.mybatis.plugin.common.base.BaseEntity;
 import java.io.Serializable;
+
+import com.platform.configure.base.BaseEntity;
 
 public class BasedataI18n extends BaseEntity implements Serializable {
     // basedata_i18n.ID

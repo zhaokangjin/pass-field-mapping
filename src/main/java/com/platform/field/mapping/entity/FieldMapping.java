@@ -1,6 +1,6 @@
 package com.platform.field.mapping.entity;
 
-import com.platform.mybatis.plugin.common.base.BaseEntity;
+import com.platform.configure.base.BaseEntity;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -97,24 +97,6 @@ public class FieldMapping extends BaseEntity implements Serializable {
     }
 
     @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", fieldid=").append(fieldid);
-        sb.append(", fieldCn=").append(fieldCn);
-        sb.append(", fieldEn=").append(fieldEn);
-        sb.append(", eventuallyUpdatePeople=").append(eventuallyUpdatePeople);
-        sb.append(", creator=").append(creator);
-        sb.append(", createcreationTime=").append(createcreationTime);
-        sb.append(", eventuallyUpdateTime=").append(eventuallyUpdateTime);
-        sb.append(", deleteFlag=").append(deleteFlag);
-        sb.append("]");
-        return sb.toString();
-    }
-
-    @Override
     public boolean equals(Object that) {
         if (this == that) {
             return true;
@@ -149,5 +131,24 @@ public class FieldMapping extends BaseEntity implements Serializable {
         result = prime * result + ((getEventuallyUpdateTime() == null) ? 0 : getEventuallyUpdateTime().hashCode());
         result = prime * result + ((getDeleteFlag() == null) ? 0 : getDeleteFlag().hashCode());
         return result;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", fieldid=").append(fieldid);
+        sb.append(", fieldCn=").append(fieldCn);
+        sb.append(", fieldEn=").append(fieldEn);
+        sb.append(", eventuallyUpdatePeople=").append(eventuallyUpdatePeople);
+        sb.append(", creator=").append(creator);
+        sb.append(", createcreationTime=").append(createcreationTime);
+        sb.append(", eventuallyUpdateTime=").append(eventuallyUpdateTime);
+        sb.append(", deleteFlag=").append(deleteFlag);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

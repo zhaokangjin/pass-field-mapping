@@ -1,8 +1,9 @@
 package com.platform.field.mapping.entity;
 
-import com.platform.mybatis.plugin.common.base.BaseEntity;
 import java.io.Serializable;
 import java.util.Date;
+
+import com.platform.configure.base.BaseEntity;
 
 public class TableMapping extends BaseEntity implements Serializable {
     // tpl_table_mapping.TABLE_NAMEID

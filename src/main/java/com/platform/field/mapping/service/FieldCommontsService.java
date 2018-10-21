@@ -17,11 +17,10 @@ import com.platform.field.mapping.entity.FieldCommonts;
 import com.platform.field.mapping.entity.FieldMapping;
 import com.platform.field.mapping.entity.FieldMappingExample;
 import com.platform.field.mapping.entity.FieldMappingExample.Criteria;
-import com.platform.field.mapping.entity.TableMapping;
 
 @Service
 public class FieldCommontsService {
-	private final int splitSize=10;
+	private final int splitSize=789;
 	@Autowired
 	FieldCommontsMapper fieldCommontsMapper;
 	@Autowired
@@ -44,7 +43,7 @@ public class FieldCommontsService {
 		List<BasedataI18n> result = basedataI18nMapper.selectSepretor();
 		return result;
 	}
-	@TargetDataSource(value=DataSourceType.MASTER)
+/*	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldCommonts> fieldMappingMapper() {
 		List<TableMapping> resultTable = tableMappingMapper.selectAllSort();
 		List<FieldMapping> resultField = fieldMappingMapper.selectAllSort();
@@ -77,7 +76,7 @@ public class FieldCommontsService {
 			list.add(com);
 		}
 		return list;
-	}
+	}*/
 
 	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldMapping> getList(String fieldName,List<String> paramList) {
@@ -114,7 +113,7 @@ public class FieldCommontsService {
 		list.add("_CHINA_ELECTRONIC_TECHNOLOGY");
 		list.add("_CERTIFICATE_IN_REGARD_TO");
 		list.add("_STATE_ADMINISTRATION_FOR");
-		/*list.add("_DELIVERED_DUTY_UNPAIDNAMED");
+		list.add("_DELIVERED_DUTY_UNPAIDNAMED");
 		list.add("_RESEARCH_CENTRE_TO_ADVISE_ON");
 		list.add("_PRIZM_POTENTIAL_RATING_INDEX");
 		list.add("_CHINA_AEROSPACE_SCIENCE_AND");
@@ -4105,7 +4104,7 @@ public class FieldCommontsService {
 		list.add("_REWRDFORSERVICESRENDERED");
 		list.add("_ANNUAL");
 		list.add("_BREED");
-		list.add("_CHARACTERISTIC");*/
+		list.add("_CHARACTERISTIC");
 		return list;
 	}	
 }
