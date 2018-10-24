@@ -17,9 +17,16 @@ import com.platform.field.mapping.entity.FieldCommonts;
 import com.platform.field.mapping.entity.FieldMapping;
 import com.platform.field.mapping.entity.FieldMappingExample;
 import com.platform.field.mapping.entity.FieldMappingExample.Criteria;
-
+/**
+ * 
+ * @author kangjin.zhao@accenture
+ *
+ * @param <R> record 和数据库表字段对应
+ * @param <E> recordExample 和数据库表字段条件对应
+ * @param <C> 和前台传入的条件对应
+ */
 @Service
-public class FieldCommontsService {
+public class FieldCommontsService <R,E,C>{
 	private final int splitSize=789;
 	@Autowired
 	FieldCommontsMapper fieldCommontsMapper;
@@ -42,6 +49,11 @@ public class FieldCommontsService {
 	public List<BasedataI18n> selectSepretor() {
 		List<BasedataI18n> result = basedataI18nMapper.selectSepretor();
 		return result;
+	}
+	@TargetDataSource(value=DataSourceType.MASTER)
+	public int bathcDeleteUpdateOrInsertByExample(List<R> recordList) {
+		
+		return 0;
 	}
 /*	@TargetDataSource(value=DataSourceType.MASTER)
 	public List<FieldCommonts> fieldMappingMapper() {

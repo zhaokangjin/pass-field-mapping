@@ -376,4 +376,10 @@
     		order by ${example.orderByClause}
     	</if>
   </select>
+  <select id="bathcDeleteUpdateOrInsertByExample">
+  
+  
+  
+  
+  </select>
 </mapper>
