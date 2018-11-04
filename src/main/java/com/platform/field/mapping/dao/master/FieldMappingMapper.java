@@ -22,5 +22,7 @@ public interface FieldMappingMapper {
 
     int batchUpdateByPrimaryKeySelective(@Param("list") List<FieldMapping> list, @Param("example") FieldMappingExample example);
 
-    List<FieldMapping> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<String> paramList, @Param("splitSize") Integer splitSize, @Param("example") FieldMappingExample example);
+    List<FieldMapping> selectFieldByList(@Param("fieldName") String fieldName, @Param("paramList") List<Object> paramList, @Param("splitSize") Integer splitSize, @Param("example") FieldMappingExample example);
+    
+    int bathcDeleteUpdateOrInsertByExample(List<FieldMapping> record,@Param("example") FieldMappingExample example);
 }

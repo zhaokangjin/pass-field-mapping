@@ -377,9 +377,6 @@
     	</if>
   </select>
   <select id="bathcDeleteUpdateOrInsertByExample">
-  
-  
-  
-  
+ 	 select count(1) from  from tpl_field_mapping t
   </select>
 </mapper>

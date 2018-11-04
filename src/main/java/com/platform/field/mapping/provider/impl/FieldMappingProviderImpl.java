@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.platform.configure.base.ConditionToExample;
+import com.platform.configure.base.Status;
 import com.platform.configure.base.StatusResult;
 import com.platform.field.mapping.condition.FieldMappingCondition;
 import com.platform.field.mapping.entity.FieldMapping;
@@ -32,32 +33,32 @@ public class FieldMappingProviderImpl implements FieldMappingProvider{
 			ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria> change=new ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria>();
 			example = change.getExample(example, condition,criteria);
 			//fieldMappingMapper.bathcDeleteUpdateOrInsertByExample(record,example);
-			result=new StatusResult<Integer>(200,0);
+			result=new StatusResult<Integer>(Status.Success,0);
 			return result;
 		} catch (Exception e) {
 			logger.error(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">Exception:"+e);
 		}
-		return new StatusResult<Integer>(500,-1);
+		return new StatusResult<Integer>(Status.Exception,-1);
 	}
 
 	@Override
 	public StatusResult<Long> countByCondition(FieldMappingCondition condition) {
-		return new StatusResult<Long>(200,-1l);
+		return new StatusResult<Long>(Status.Success,-1l);
 	}
 
 	@Override
 	public StatusResult<Integer> deleteByCondition(FieldMappingCondition condition) {
-		return new StatusResult<Integer>(200,-1);
+		return new StatusResult<Integer>(Status.Success,-1);
 	}
 
 	@Override
 	public StatusResult<Integer> insert(FieldMapping record) {
-		return new StatusResult<Integer>(200,-1);
+		return new StatusResult<Integer>(Status.Success,-1);
 	}
 
 	@Override
 	public StatusResult<Integer> insertSelective(FieldMapping record) {
-		return new StatusResult<Integer>(200,-1);
+		return new StatusResult<Integer>(Status.Success,-1);
 	}
 
 	@Override
@@ -92,11 +93,11 @@ public class FieldMappingProviderImpl implements FieldMappingProvider{
 
 	@Override
 	public StatusResult<Integer> updateByCondition(FieldMapping record) {
-		return new StatusResult<Integer>(200,-1);
+		return new StatusResult<Integer>(Status.Success,-1);
 	}
 
 	@Override
 	public StatusResult<Integer> updateByExampleSelective(FieldMapping record) {
-		return new StatusResult<Integer>(200,-1);
+		return new StatusResult<Integer>(Status.Success,-1);
 	}
 }

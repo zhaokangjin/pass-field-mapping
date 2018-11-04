@@ -114,8 +114,8 @@ public class FieldCommontsService <R,E,C>{
 		List<FieldMapping> resultField = fieldMappingMapper.selectFieldByList(fieldName, getList(),splitSize,example);
 		return resultField;
 	}
-	private List<String> getList(){
-		List<String> list=new ArrayList<String>();
+	private List<Object> getList(){
+		List<Object> list=new ArrayList<Object>();
 		list.add("_RESOLVE");
 		list.add("_FIRE_RISK_EXTENSION_CLAUSEFOR");
 		list.add("_CHINA_AEROSPACE_SCIENCE_AND");

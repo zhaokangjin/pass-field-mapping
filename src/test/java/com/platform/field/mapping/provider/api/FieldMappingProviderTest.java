@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.platform.configure.base.Status;
 import com.platform.configure.base.StatusResult;
 import com.platform.field.mapping.condition.FieldMappingCondition;
 import com.platform.field.mapping.entity.FieldMapping;
@@ -22,7 +23,7 @@ public class FieldMappingProviderTest {
 	@Test
 	public StatusResult<Integer> bathcDeleteUpdateOrInsertByConditionTest(List<FieldMapping> record, FieldMappingCondition condition) {
 		StatusResult<Integer> result = null;
-		result = new StatusResult<Integer>(200, 0);
+		result = new StatusResult<Integer>(Status.Success, 0);
 		logger.info("ddd");
 		
 		return result;
@@ -30,22 +31,22 @@ public class FieldMappingProviderTest {
 
 	@Test
 	public StatusResult<Long> countByConditionTest(FieldMappingCondition condition) {
-		return new StatusResult<Long>(200, -1l);
+		return new StatusResult<Long>(Status.Success, -1l);
 	}
 
 	@Test
 	public StatusResult<Integer> deleteByConditionTest(FieldMappingCondition condition) {
-		return new StatusResult<Integer>(200, -1);
+		return new StatusResult<Integer>(Status.Success, -1);
 	}
 
 	@Test
 	public StatusResult<Integer> insertTest(FieldMapping record) {
-		return new StatusResult<Integer>(200, -1);
+		return new StatusResult<Integer>(Status.Success, -1);
 	}
 
 	@Test
 	public StatusResult<Integer> insertSelectiveTest(FieldMapping record) {
-		return new StatusResult<Integer>(200, -1);
+		return new StatusResult<Integer>(Status.Success, -1);
 	}
 
 	@Test
@@ -75,11 +76,11 @@ public class FieldMappingProviderTest {
 
 	@Test
 	public StatusResult<Integer> updateByConditionTest(FieldMapping record) {
-		return new StatusResult<Integer>(200, -1);
+		return new StatusResult<Integer>(Status.Success, -1);
 	}
 
 	@Test
 	public StatusResult<Integer> updateByExampleSelectiveTest(FieldMapping record) {
-		return new StatusResult<Integer>(200, -1);
+		return new StatusResult<Integer>(Status.Success, -1);
 	}
 }
