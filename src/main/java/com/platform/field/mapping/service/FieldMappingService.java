@@ -12,9 +12,8 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import com.alibaba.fastjson.JSON;
 import com.platform.configure.base.BaseService;
 import com.platform.configure.base.ConditionToExample;
-import com.platform.configure.base.Status;
-import com.platform.configure.base.StatusResult;
-
+import com.platform.configure.base.ResultStatus;
+import com.platform.configure.base.enums.Status;
 import com.platform.field.mapping.condition.FieldMappingCondition;
 import com.platform.field.mapping.dao.master.FieldMappingMapper;
 import com.platform.field.mapping.entity.FieldMapping;
@@ -34,8 +33,8 @@ public class FieldMappingService implements BaseService<FieldMapping, FieldMappi
 
 	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> bathcDeleteUpdateOrInsertByExample(List<FieldMapping> record, FieldMappingCondition condition) {
-		StatusResult<Integer> result=null;
+	public ResultStatus<Integer> bathcDeleteUpdateOrInsertByExample(List<FieldMapping> record, FieldMappingCondition condition) {
+		ResultStatus<Integer> result=null;
 		logger.info(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">condition:"+JSON.toJSONString(condition)+">paramList:"+JSON.toJSONString(record));
 		FieldMappingExample example=new FieldMappingExample();
 		Criteria criteria=example.createCriteria();
@@ -43,19 +42,19 @@ public class FieldMappingService implements BaseService<FieldMapping, FieldMappi
 			ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria> conditionToExample=new ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria>();
 			example = conditionToExample.getExample(example, condition,criteria);
 			fieldMappingMapper.bathcDeleteUpdateOrInsertByExample(record,example);
-			result=new StatusResult<Integer>(Status.Success,0);
+			result=new ResultStatus<Integer>(Status.SUCCESS,0);
 			logger.info(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">result:"+JSON.toJSONString(result));
 			return result;
 		} catch (Exception e) {
 			logger.error(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">Exception:"+e);
 			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 		}
-		return new StatusResult<Integer>(Status.Exception,-1);
+		return new ResultStatus<Integer>(Status.EXCEPTION,-1);
 	}
 
 	@Override
-	public StatusResult<List<FieldMapping>> selectRecordsByInList(String fieldName, List<Object> paramList, Integer splitSize,FieldMappingCondition condition) {
-		StatusResult<List<FieldMapping>> result=null;
+	public ResultStatus<List<FieldMapping>> selectRecordsByInList(String fieldName, List<Object> paramList, Integer splitSize,FieldMappingCondition condition) {
+		ResultStatus<List<FieldMapping>> result=null;
 		logger.info(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">condition:"+JSON.toJSONString(condition)+">paramList:"+JSON.toJSONString(paramList));
 		FieldMappingExample example=new FieldMappingExample();
 		Criteria criteria=example.createCriteria();
@@ -63,52 +62,51 @@ public class FieldMappingService implements BaseService<FieldMapping, FieldMappi
 			ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria> conditionToExample=new ConditionToExample<FieldMappingExample,FieldMappingCondition,Criteria>();
 			example = conditionToExample.getExample(example, condition,criteria);
 			List<FieldMapping> resultList=fieldMappingMapper.selectFieldByList(fieldName,paramList,1000,example);
-			result=new StatusResult<List<FieldMapping>>(Status.Success,resultList);
+			result=new ResultStatus<List<FieldMapping>>(Status.SUCCESS,resultList);
 			logger.info(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">result:"+JSON.toJSONString(result));
 			return result;
 		} catch (Exception e) {
 			logger.error(Thread.currentThread().getStackTrace()[1].getClassName()+">"+Thread.currentThread().getStackTrace()[1].getMethodName()+">Exception:"+e);
-			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 		}
-		return new StatusResult<List<FieldMapping>>(Status.Exception,null);
+		return new ResultStatus<List<FieldMapping>>(Status.EXCEPTION,null);
 	}
 	@Override
-	public StatusResult<Long> countByExample() {
-		return new StatusResult<Long>(Status.Success,-1l);
-	}
-
-	@Override
-	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> deleteByExample() {
-		return new StatusResult<Integer>(Status.Success,-1);
+	public ResultStatus<Long> countByExample() {
+		return new ResultStatus<Long>(Status.SUCCESS,-1l);
 	}
 
 	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> insert(FieldMapping record) {
-		return new StatusResult<Integer>(Status.Success,-1);
+	public ResultStatus<Integer> deleteByExample() {
+		return new ResultStatus<Integer>(Status.SUCCESS,-1);
 	}
 
 	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> insertSelective(FieldMapping record) {
-		return new StatusResult<Integer>(Status.Success,-1);
+	public ResultStatus<Integer> insert(FieldMapping record) {
+		return new ResultStatus<Integer>(Status.SUCCESS,-1);
 	}
 
 	@Override
-	public StatusResult<List<FieldMapping>> selectByExample() {
+	@Transactional(rollbackFor=Exception.class)
+	public ResultStatus<Integer> insertSelective(FieldMapping record) {
+		return new ResultStatus<Integer>(Status.SUCCESS,-1);
+	}
+
+	@Override
+	public ResultStatus<List<FieldMapping>> selectByExample() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public StatusResult<List<FieldMapping>> selectByExample(FieldMappingCondition condition) {
+	public ResultStatus<List<FieldMapping>> selectByExample(FieldMappingCondition condition) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public StatusResult<List<FieldMapping>> selectRecordsByExists(FieldMappingCondition condition, String subTable) {
+	public ResultStatus<List<FieldMapping>> selectRecordsByExists(FieldMappingCondition condition, String subTable) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -116,18 +114,18 @@ public class FieldMappingService implements BaseService<FieldMapping, FieldMappi
 
 	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> updateByExample(FieldMapping record) {
-		return new StatusResult<Integer>(Status.Success,-1);
+	public ResultStatus<Integer> updateByExample(FieldMapping record) {
+		return new ResultStatus<Integer>(Status.SUCCESS,-1);
 	}
 
 	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public StatusResult<Integer> updateByExampleSelective(FieldMapping record) {
-		return new StatusResult<Integer>(Status.Success,-1);
+	public ResultStatus<Integer> updateByExampleSelective(FieldMapping record) {
+		return new ResultStatus<Integer>(Status.SUCCESS,-1);
 	}
 
 	@Override
-	public StatusResult<List<FieldMapping>> selectRecordsByNotInList(String arg0, List<Object> arg1, Integer arg2, FieldMappingCondition arg3) {
+	public ResultStatus<List<FieldMapping>> selectRecordsByNotInList(String arg0, List<Object> arg1, Integer arg2, FieldMappingCondition arg3) {
 		// TODO Auto-generated method stub
 		return null;
 	}
